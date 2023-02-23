@@ -1,4 +1,5 @@
 import {create} from 'zustand'
+import {persist} from 'zustand/middleware'
 const INITIAL_TODO=[
     {
       name: "Todo 1",
@@ -37,25 +38,29 @@ interface IStore{
 
 }
 
-const useStore=create<IStore>((set) =>({
-    todos:INITIAL_TODO,
-    input: '',
-    setInput: (newInput:string) => set({
-        input:newInput
+const useStore=create(
+  persist<IStore>(
+    (set) => ({
+      todos:INITIAL_TODO,
+      input: '',
+      setInput: (newInput:string) => set({
+          input:newInput
+      }),
+      addTodo: () => set((prev) => ({
+          todos:[
+              ...prev.todos,{
+                  name:prev.input,
+                  isCompleted:false
+              }
+          ],
+          input : ''
+      })),
     }),
-    addTodo: () => set((prev) => ({
-        todos:[
-            ...prev.todos,{
-                name:prev.input,
-                isCompleted:false
-            }
-        ],
-        input : ''
-    })),
-   
-   
-   
+    {
+      name:'todo-store'
+    }
 
-}))
+  )
+)
 
 export {useStore}
