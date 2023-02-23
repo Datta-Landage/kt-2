@@ -12,21 +12,21 @@ function TodoList() {
   console.log("istrue", isTrue, "too", toString);
 
   return (
-    <div className="md:-ml-[40px]  ">
+    <div className="md:-ml-[2.5rem]  ">
       <ol className="list-decimal">
         {todos.map((todo, index: number) => (
-          <div className="flex gap-[100px]">
+          <div className="flex gap-[6.25rem]">
             <Link href={`/${index}`} key={index}>
-              <div className=" w-[150px]">
+              <div className=" w-[9.375rem]">
                 {" "}
                 {isTrue ? (
-                  <li className="md:pr-[40px] text-[22px] line-through">
+                  <li className="md:pr-[2.5rem] text-[1.375rem] line-through">
                     {" "}
                     {todo.name}
                   </li>
                 ) : (
                   <li
-                    className={`md:pr-[40px] text-[22px] ${
+                    className={`md:pr-[2.5rem] text-[1.375rem] ${
                       name && index == ind ? "line-through" : ""
                     } `}
                   >
@@ -37,7 +37,7 @@ function TodoList() {
               </div>
             </Link>
             <div
-              className="md:pl-[200px]"
+              className="md:pl-[12.5rem]"
               onClick={() => (setName(!name), setIndex(index))}
             >
               {" "}

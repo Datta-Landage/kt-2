@@ -3,7 +3,7 @@ import { BiFilter } from "react-icons/bi";
 import { useStores } from "../store/checkStore";
 
 const Dropdown = () => {
-  const { isTrue, toggleTrue } = useStores();
+  const { toggleTrue } = useStores();
 
   const [open, setOpen] = useState(false);
   return (

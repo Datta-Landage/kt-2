@@ -20,7 +20,9 @@ function Todoform() {
 
         <button
           className={`m-5 bg-blue-600 text-gray-50 px-10 py-2 ${
-            input.length > 0 ? "opacity-100" : "opacity-25"
+            input.length > 0
+              ? "opacity-100"
+              : "opacity-100 cursor-not-allowed  bg-gray-200"
           }   rounded-[0.5rem]`}
           onClick={addTodo}
         >
