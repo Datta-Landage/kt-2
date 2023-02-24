@@ -9,7 +9,11 @@ function MoodData({ data, query }: any) {
   const router = useRouter();
   const food = (router.query?.index as string) || "";
   data = data.data;
-  let foodData = data.common;
+
+  let foodData =
+    search.length > 0
+      ? data.common.filter((ele: any) => ele.food_name.includes(search))
+      : data.common;
 
   return (
     <div>
