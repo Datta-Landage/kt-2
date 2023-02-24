@@ -9,7 +9,7 @@ const Dropdown = () => {
   return (
     <div className="relative inline-block text-left">
       <button
-        className="px-5 py-2 mt-2 transition duration-200 ease-in-out transform bg-white border rounded-md shadow-md outline-none hover:translate-y-1 hover:shadow-lg"
+        className="px-5 py-2 mt-3 mr-2 transition duration-200 ease-in-out transform bg-white border rounded-md "
         type="button"
         id="dropdown"
         aria-haspopup="true"
@@ -23,7 +23,6 @@ const Dropdown = () => {
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="dropdown"
-        tabIndex="-1"
       >
         {open && (
           <div className="py-1" role="none">

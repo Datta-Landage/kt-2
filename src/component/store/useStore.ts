@@ -2,24 +2,28 @@ import {create} from 'zustand'
 import {persist} from 'zustand/middleware'
 const INITIAL_TODO=[
     {
-      name: "Todo 1",
+      name: "Fried rice",
       isCompleted: false,
+      isTime:false,
       disc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
     {
-      name: "Todo 2",
+      name: "chicken",
+      isCompleted: false,
+      isTime:false,
+      disc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+
+    },
+    {
+      name: "Tandoori",
+      isTime:false,
       isCompleted: false,
       disc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 
     },
     {
-      name: "Todo 3",
-      isCompleted: false,
-      disc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-
-    },
-    {
-      name: "Todo 4",
+      name: "curry",
+      isTime:false,
       isCompleted: false,
       disc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 
@@ -29,6 +33,7 @@ interface IStore{
     todos:{
         name:string,
         isCompleted:boolean
+        isTime:boolean
     }[];
     input:string;
     setInput: (newInput:string) => void;
@@ -50,7 +55,8 @@ const useStore=create(
           todos:[
               ...prev.todos,{
                   name:prev.input,
-                  isCompleted:false
+                  isCompleted:false,
+                  isTime:false
               }
           ],
           input : ''

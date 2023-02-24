@@ -7,10 +7,10 @@ function Todoform() {
   const addTodo = useStore((s) => s.addTodo);
 
   return (
-    <div className="mx-5 mt-2 md:flex">
+    <div className="mt-2 md:mr-10 -mt-[13rem]">
       <div>
         <input
-          className="border border-red-900 hover:border-b-4 py-1 md:mr-8 w-[300px]"
+          className="border border-blue-700  hover:border-b-4 py-1 md:mr-8 w-[22.9rem] rounded"
           type="text"
           value={input}
           onChange={(e) => {
@@ -22,8 +22,9 @@ function Todoform() {
           className={`m-5 bg-blue-600 text-gray-50 px-10 py-2 ${
             input.length > 0
               ? "opacity-100"
-              : "opacity-100 cursor-not-allowed  bg-gray-200"
-          }   rounded-[0.5rem]`}
+              : " disabled:cursor-not-allowed  bg-gray-200 disabled:opacity-100"
+          }   rounded-[0.5rem] `}
+          disabled={input.length === 0}
           onClick={addTodo}
         >
           Add
